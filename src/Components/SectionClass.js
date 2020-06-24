@@ -5,7 +5,7 @@ export default class SectionClass extends Component {
     super(props);
     
   }
-  
+  notification=()=>{alert("notification from website")}
   render() {
     return (
       <section>
@@ -22,6 +22,7 @@ export default class SectionClass extends Component {
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste
                 esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae
                 adipisci, beatae obcaecati.</p>
+                <button className="btn btn-outline-danger" onClick={()=>this.notification()}>VIEW ALL</button>
             </div>
           </div>
         </div>
