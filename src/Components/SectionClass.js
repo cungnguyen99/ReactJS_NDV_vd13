@@ -3,9 +3,15 @@ import React, { Component } from 'react'
 export default class SectionClass extends Component {
   constructor(props) {
     super(props);
-    
+    this.state={
+      isCollapsed: false
+    }
   }
-  notification=()=>{alert("notification from website")}
+
+  notification=()=>{this.setState({
+    isCollapsed:!this.state.isCollapsed
+  })}
+  
   render() {
     return (
       <section>
@@ -22,6 +28,8 @@ export default class SectionClass extends Component {
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste
                 esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae
                 adipisci, beatae obcaecati.</p>
+                <p className={this.state.isCollapsed?"visible":"display"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste
+                esse assumenda amet aperiam exercitationem</p>
                 <button className="btn btn-outline-danger" onClick={()=>this.notification()}>VIEW ALL</button>
             </div>
           </div>
