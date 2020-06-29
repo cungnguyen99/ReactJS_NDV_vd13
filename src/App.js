@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import SectionClass from './Components/SectionClass'
 import Section from './Components/Section'
 import Footer from './Components/Footer'
+import UpdateProps from './Components/UpdateProps'
 import img1 from './img/01.jpg'
 import img2 from './img/02.jpg'
 import img3 from './img/03.jpg'
@@ -12,7 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state={
-      trangThai:'khoitao'
+      trangThai:'khoitao',
+      trangThai2:'cungnv'
     }
   }
   
@@ -46,7 +48,8 @@ class App extends Component {
   
   updateState=()=>{
     this.setState({
-      trangThai:'state updated'
+      trangThai:'state updated',
+      trangThai2:'cungnv 99'
     })
   }
   
@@ -62,6 +65,7 @@ class App extends Component {
         <Section src={img2} title="We salute you!"/>
         <SectionClass order_1="order-lg-1" order_2="order-lg-2" title="Let there be rock!" src={img3}/>
         <button className="btn btn-outline-primary" onClick={()=>{this.updateState()}}>Update state</button>
+        <UpdateProps name={this.state.trangThai2}/>
         <Footer/>
       </div>
     );
