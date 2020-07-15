@@ -10,7 +10,8 @@ export default class SectionClass extends Component {
 
   notification=()=>{this.setState({
     isCollapsed:!this.state.isCollapsed
-  })}
+  })
+}
 
   renderFooter=()=>(
     <footer className="footer text-center">
@@ -42,7 +43,8 @@ export default class SectionClass extends Component {
 
   renderForm=()=>(
     <div className="row">
-      <input className="form-control" type="text" placeholder="Edit"/>
+      {/* Bài 23 ref, defaultValue. để lấy ra biến nhận được thì dùng this.trunggian.value*/}
+      <input ref={(inputValue)=>{this.trunggian=inputValue}} defaultValue={this.props.title} className="form-control" type="text" placeholder="Edit"/>
       <button className="btn btn-success" onClick={()=>this.notification()}>Save</button>
     </div>
   )
